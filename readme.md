@@ -15,16 +15,16 @@ Download plugin files then include jquery library and plugin files. For example:
 
 ## Basic Usage
 
-'''sh
+```html
 $(".for-example").baseChecked();
-'''sh
+```
 
-'''sh
+```html
 <div class="myWrap">
 	<input type="radio" name="example2" class="for-example" checked />
 	<label>Content is here!</label>
 </div>
-'''sh
+```
 
 
 
