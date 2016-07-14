@@ -8,10 +8,11 @@ This plugin has changed default checkbox and radio buttons.
 
 ## Installation
 Download plugin files then include jquery library and plugin files. For example: 
-
+```html
 <link rel="stylesheet" href="assets/stylesheets/css/basechecked.css" />
 <script type="text/javascript" src="jquery-library-path"></script>
 <script type="text/javascript" src="assets/js/basechecked.js"></script>
+```
 
 ## Basic Usage
 
