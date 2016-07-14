@@ -15,7 +15,19 @@ Download plugin files then include jquery library and plugin files. For example:
 
 ## Basic Usage
 
+'''sh
 $(".for-example").baseChecked();
+'''sh
+
+'''sh
+<div class="myWrap">
+	<input type="radio" name="example2" class="for-example" checked />
+	<label>Content is here!</label>
+</div>
+'''sh
+
+
+
 
 ## Using All Parameters
 

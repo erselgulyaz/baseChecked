@@ -98,16 +98,6 @@
 		},function(){
 			$(this).removeClass("bc-hover");
 		});
-
-		//$("." + options.buttonClass).on("click", function(){
-		//	$(".bc-focus").removeClass("bc-focus");
-		//	$(this).parent().addClass("bc-focus");
-		//});
-		//
-		//$("body").not(".bc-focus").on("click", function(){
-		//	$(".bc-focus").removeClass("bc-focus");
-		//});
-
 	};
 
 })(jQuery);
