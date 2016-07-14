@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BaseChecked - Radiobutton and checkbox Js Plugin</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/css/basechecked.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/basechecked.min.js"></script>
+	<style type="text/css">
+	body{background-color: #efefef;}
+	.baseChecked-wrapper{position: relative; width: 600px; margin: 50px auto;}
+	.box{margin-bottom: 100px;}
+	</style>
+</head>
+<body>
+	<div class="baseChecked-wrapper">
+		<div class="box">
+			<div class="myWrap">
+				<input type="checkbox" name="example1" class="for-example" disabled />
+				<label>Content is here! (Disabled)</label>
+			</div>
+			<div class="myWrap">
+				<input type="checkbox" name="example1" class="for-example" checked />
+				<label>Content is here! 2</label>
+			</div>
+			<div class="myWrap">
+				<input type="checkbox" name="example1" class="for-example" />
+				<label>Content is here! 3</label>
+			</div>
+		</div><!-- /box -->
+		<div class="box">
+			<div class="myWrap">
+				<input type="radio" name="example2" class="for-example" checked />
+				<label>Content is here!</label>
+			</div>
+			<div class="myWrap">
+				<input type="radio" name="example2" class="for-example" disabled />
+				<label>Content is here! (Disabled)</label>
+			</div>
+			<div class="myWrap">
+				<input type="radio" name="example2" class="for-example" />
+				<label>Content is here!</label>
+			</div>
+		</div><!-- /box -->
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".for-example").baseChecked();
+	});
+</script>
+</html>
