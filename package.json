@@ -1,12 +1,19 @@
 {
-	"name": "BASECHECKED",
-	"version": "1.0.0",
-	"devDependencies": {
-		"grunt": "*",
-		"grunt-contrib-connect": "*",
-		"grunt-contrib-less": "*",
-		"grunt-contrib-uglify": "*",
-		"grunt-contrib-watch": "*",
-		"grunt-newer": "*"
-	}
+  "name": "BASECHECKED",
+  "version": "1.0.0",
+  "description": "basic checkbox and radio button plugin",
+  "author": "Ersel Gülyaz | erselgulyaz@gmail.com",
+  "dependencies": {
+    "gulp": "*"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.6.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0"
+  }
 }
