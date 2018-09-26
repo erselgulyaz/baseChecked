@@ -13,7 +13,7 @@ let baseChecked = {
     const resultEl = baseChecked.extend(baseChecked.defaults, options),
           items = document.querySelectorAll(resultEl.wrapperEl);
 
-    let itemFormEl, itemButtonEl, itemName;
+    let itemFormEl, itemButtonEl, itemName, itemType;
     
     baseChecked.clickAction(resultEl);
     
@@ -21,9 +21,11 @@ let baseChecked = {
       /* element selectors */
       itemFormEl = item.querySelector(resultEl.mainEl);
       itemName = itemFormEl.getAttribute('name');
+      itemType = itemFormEl.getAttribute('type');
 
       /* added data attribute from wrapper  */
       item.setAttribute('data-bc-name' , itemName);
+      item.setAttribute('data-bc-type' , itemType);
 
       /* button created */
       itemButtonEl = document.createElement('span');

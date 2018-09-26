@@ -17,7 +17,8 @@ var baseChecked = {
 
     var itemFormEl = void 0,
         itemButtonEl = void 0,
-        itemName = void 0;
+        itemName = void 0,
+        itemType = void 0;
 
     baseChecked.clickAction(resultEl);
 
@@ -25,9 +26,11 @@ var baseChecked = {
       /* element selectors */
       itemFormEl = item.querySelector(resultEl.mainEl);
       itemName = itemFormEl.getAttribute('name');
+      itemType = itemFormEl.getAttribute('type');
 
       /* added data attribute from wrapper  */
       item.setAttribute('data-bc-name', itemName);
+      item.setAttribute('data-bc-type', itemType);
 
       /* button created */
       itemButtonEl = document.createElement('span');

@@ -1,0 +1,26 @@
+.bc-wrapper {
+  display: inline-block;
+  padding: 5px; }
+  .bc-wrapper * {
+    box-sizing: border-box;
+    cursor: pointer; }
+
+.bc-label {
+  display: inline-block;
+  float: left;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 10px 0 0; }
+
+.bc-button {
+  border: 1px solid #333333;
+  box-shadow: 0px 0px 1px 0px #333333;
+  display: inline-block;
+  height: 20px;
+  width: 20px; }
+  .bc-wrapper[data-bc-type="radio"] .bc-button {
+    border-radius: 20px; }
+  .bc-selected .bc-button {
+    background-color: #9B2A23;
+    border-color: #9B2A23;
+    box-shadow: none; }

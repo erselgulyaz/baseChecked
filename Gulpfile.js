@@ -25,7 +25,6 @@ gulp.task('styles', () => {
   return watch('./src/stylesheets/baseChecked.scss', () => {
     gulp.src('./src/stylesheets/baseChecked.scss')
     .pipe(sass())
-    .pipe(sass({ outputStyle: "compressed" }))
     .pipe(connect.reload())
     .pipe(concat('baseChecked.css'))
     .pipe(gulp.dest('./dist'));
@@ -45,6 +44,14 @@ gulp.task('scripts', () => {
   });
 });
 
+gulp.task('stylesmin', () => {
+  gulp.src('./src/stylesheets/baseChecked.scss')
+  .pipe(sass())
+  .pipe(sass({ outputStyle: "compressed" }))
+  .pipe(concat('baseChecked.min.css'))
+  .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('babel', () =>
   gulp.src('./src/scripts/baseChecked.js')
     .pipe(babel({
@@ -55,3 +62,4 @@ gulp.task('babel', () =>
 );
 
 gulp.task("default", ["connect", "html", "scripts", "styles"]);
+gulp.task("prod", ["babel", "stylesmin"]);
