@@ -7,7 +7,7 @@ var baseChecked = {
     infoEl: '.bc-label',
     activeClass: 'bc-selected',
     disabledEl: 'bc-disabled',
-    animationName: 'animation-name',
+    animationName: '',
     buttonClass: 'bc-button',
     buttonText: ''
   },
@@ -18,7 +18,8 @@ var baseChecked = {
     var itemFormEl = void 0,
         itemButtonEl = void 0,
         itemName = void 0,
-        itemType = void 0;
+        itemType = void 0,
+        itemAnimation = void 0;
 
     baseChecked.clickAction(resultEl);
 
@@ -27,10 +28,12 @@ var baseChecked = {
       itemFormEl = item.querySelector(resultEl.mainEl);
       itemName = itemFormEl.getAttribute('name');
       itemType = itemFormEl.getAttribute('type');
+      itemAnimation = resultEl.animationName;
 
       /* added data attribute from wrapper  */
       item.setAttribute('data-bc-name', itemName);
       item.setAttribute('data-bc-type', itemType);
+      resultEl.animationName.length > 0 && item.setAttribute('data-bc-animation', itemAnimation);
 
       /* button created */
       itemButtonEl = document.createElement('span');
@@ -121,5 +124,7 @@ var closestSelector = function closestSelector() {
 
 window.addEventListener('load', function () {
   closestSelector();
-  baseChecked.init();
+  baseChecked.init({
+    animationName: 'outToCenter'
+  });
 });
