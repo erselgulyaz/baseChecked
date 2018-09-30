@@ -47,6 +47,58 @@
   top: 17%;
   transform: rotate(47deg); }
 
+/* animationName: 'noMoreBorder' */
+.bc-wrapper[data-bc-animation="noMoreBorder"] .bc-button:before, .bc-wrapper[data-bc-animation="noMoreBorder"] .bc-button:after {
+  content: "";
+  transition: all .4s ease-in-out; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"][data-bc-type="radio"] .bc-button:before {
+  border-radius: 40px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"][data-bc-type="checkbox"] .bc-button:before, .bc-wrapper[data-bc-animation="noMoreBorder"][data-bc-type="checkbox"] .bc-button:after {
+  background-color: #f00;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 2px; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"][data-bc-type="checkbox"] .bc-button:before {
+  left: 0; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"][data-bc-type="checkbox"] .bc-button:after {
+  right: 0; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected .bc-button {
+  border-color: transparent; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected[data-bc-type="radio"] .bc-button:before {
+  background-color: #f00;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+  width: 50%; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected[data-bc-type="checkbox"] .bc-button:before, .bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected[data-bc-type="checkbox"] .bc-button:after {
+  opacity: 1; }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected[data-bc-type="checkbox"] .bc-button:before {
+  height: 30%;
+  left: 21%;
+  top: 49%;
+  transform: rotate(-18deg); }
+
+.bc-wrapper[data-bc-animation="noMoreBorder"].bc-selected[data-bc-type="checkbox"] .bc-button:after {
+  height: 70%;
+  left: 57%;
+  top: 17%;
+  transform: rotate(47deg); }
+
 .bc-wrapper {
   display: inline-block;
   padding: 5px; }
@@ -67,6 +119,7 @@
   display: inline-block;
   height: 40px;
   position: relative;
+  transition: all .2s ease-in-out;
   width: 40px; }
   .bc-wrapper[data-bc-type="radio"] .bc-button {
     border-radius: 40px; }

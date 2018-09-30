@@ -125,6 +125,6 @@ var closestSelector = function closestSelector() {
 window.addEventListener('load', function () {
   closestSelector();
   baseChecked.init({
-    animationName: 'outToCenter'
+    animationName: 'noMoreBorder'
   });
 });

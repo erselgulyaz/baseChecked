@@ -114,6 +114,6 @@ const closestSelector = () => { /* ie9+ closest polyfill */
 window.addEventListener('load', () => {
   closestSelector();
   baseChecked.init({
-    animationName: 'outToCenter'
+    animationName: 'noMoreBorder'
   });
 });

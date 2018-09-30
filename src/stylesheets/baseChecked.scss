@@ -1,4 +1,5 @@
 @import 'outToCenter';
+@import 'noMoreBorder';
 .bc {
   &-wrapper {
     display: inline-block;
@@ -22,6 +23,7 @@
     display: inline-block;
     height: 40px;
     position: relative;
+    transition: all .2s ease-in-out;
     width: 40px;
     .bc-wrapper[data-bc-type="radio"] & {
       border-radius: 40px;
