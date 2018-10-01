@@ -9,7 +9,10 @@ var baseChecked = {
     disabledEl: 'bc-disabled',
     animationName: '',
     buttonClass: 'bc-button',
-    buttonText: ''
+    buttonText: '',
+    onCheck: function onCheck(item) {/* checkbox checked callback */},
+    unCheck: function unCheck(item) {/* checkbox unchecked callback */},
+    onSelected: function onSelected(item) {/* radiobutton selected callback */}
   },
   init: function init(options) {
     var resultEl = baseChecked.extend(baseChecked.defaults, options),
@@ -80,10 +83,12 @@ var baseChecked = {
               oldSelectedItem !== null && oldSelectedItem.classList.remove('' + resultEl.activeClass);
               itemFormEl.click();
               item.classList.add(resultEl.activeClass);
+              resultEl.onSelected.call(undefined, innerSelector.closest(resultEl.wrapperEl));
             } else if (itemType === "checkbox") {
               /* checkboxes click action */
               item.classList.toggle(resultEl.activeClass);
               item.querySelector(resultEl.mainEl).click();
+              item.classList.contains(resultEl.activeClass) ? resultEl.onCheck.call(undefined, innerSelector.closest(resultEl.wrapperEl)) : resultEl.unCheck.call(undefined, innerSelector.closest(resultEl.wrapperEl));
             }
           }
         });
@@ -124,7 +129,5 @@ var closestSelector = function closestSelector() {
 
 window.addEventListener('load', function () {
   closestSelector();
-  baseChecked.init({
-    animationName: 'noMoreBorder'
-  });
+  baseChecked.init();
 });
