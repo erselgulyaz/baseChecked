@@ -1,29 +1,32 @@
-baseChecked is here!
 
-This plugin has changed default checkbox and radio buttons.
+baseChecked is a simple and lightweight plugin. Prepared for checkbox and radiobuttons. All css and javascript properties are editable.
 
 ## Properties
-* all class values customizable
-* init, change, check, uncheck callbacks
+* Using pure javascript and ES6 standarts
+* All style and js values customizable
+* change, check, uncheck callbacks
 
 ## Installation
-Download plugin files then include jquery library and plugin files. For example: 
+Download plugin files then include from page. For example: 
 ```html
-<link rel="stylesheet" href="assets/stylesheets/css/basechecked.css" />
-<script type="text/javascript" src="jquery-library-path"></script>
-<script type="text/javascript" src="assets/js/basechecked.js"></script>
+<link rel="stylesheet" href="/dist/baseChecked.min.css" />
+<script type="text/javascript" src="/dist/baseChecked.min.js"></script>
 ```
 
 ## Basic Usage
 
 ```html
-$(".for-example").baseChecked();
+baseChecked.init();
 ```
 
 ```html
-<div class="myWrap">
-	<input type="radio" name="example2" class="for-example" checked />
-	<label>Content is here!</label>
+<div  class="bc-wrapper">
+	<span  class="bc-label">RadioButton Sample!</span>
+	<input  type="radio"  name="radioSample"  class="bc-item"  />
+</div>
+<div  class="bc-wrapper">
+	<span  class="bc-label">Checkbox Sample!</span>
+	<input  type="checkbox"  name="checkboxSample"  class="bc-item"  />
 </div>
 ```
 
@@ -32,25 +35,18 @@ $(".for-example").baseChecked();
 
 ## Using All Parameters
 ```html
-$(".for-example").baseChecked({
-	itemClass : "bc-selector",
-	wrapClass : "bc-wrapper",
-	buttonClass : "bc-button",
-	labelClass : "bc-label",
-	disabledClass : "bc-disabled",
-	buttonText: "",
-	onInit: function() {
-		// first time plugin initialized
-	},
-	onChange: function(itemName) {
-		// radio button change function
-	},
-	onCheck: function(itemName) {
-		// checkbox check function
-	},
-	unCheck: function(itemName) {
-		// checkbox uncheck function
-	}
+baseChecked.init({
+	mainEl:  '.bc-item',
+	wrapperEl:  '.bc-wrapper',
+	infoEl:  '.bc-label',
+	activeClass:  'bc-selected',
+	disabledEl:  'bc-disabled',
+	animationName:  '',
+	buttonClass:  'bc-button',
+	buttonText:  '',
+	onCheck: (item) => {/* checkbox checked callback */},
+	unCheck: (item) => {/* checkbox unchecked callback */},
+	onSelected: (item) => { /* radiobutton selected callback */}
 });
 ```
 
@@ -64,27 +60,71 @@ $(".for-example").baseChecked({
     </tr>
     <tr>
       <td>
-      <strong>itemClass</strong>
+      <strong>mainEl</strong>
       </td>
       <td>
-      bc-selector
+      .bc-item
       </td>
       <td>
-      <p>Selected radio or checkbox item added this class</p>
+      <p>Form element class</p>
       </td>
     </tr>
     <tr>
       <td>
-      <strong>wrapClass</strong>
+      <strong>wrapperEl</strong>
       </td>
       <td>
-      bc-wrapper
+      .bc-wrapper
       </td>
       <td>
-      <p>Selected item wrapped element class attributes</p>
+      <p>Wrapper for label and form element</p>
       </td>
     </tr>
     <tr>
+      <td>
+      <strong>infoEl</strong>
+      </td>
+      <td>
+      .bc-label
+      </td>
+      <td>
+      <p>Label class</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <strong>activeClass</strong>
+      </td>
+      <td>
+      bc-selected
+      </td>
+      <td>
+      <p>When the element is selected by clicking the label or button, the given value is added to the wrapperEl.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <strong>disabledEl</strong>
+      </td>
+      <td>
+      bc-disabled
+      </td>
+      <td>
+      <p>If you are using "disabled" attributes your form elements, this class added selected element wrapperEl item. After initialization disabled item not working click and other actions.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <strong>animationName</strong>
+      </td>
+      <td>
+      empty
+      </td>
+      <td>
+      Boş bırakılabilir veya noMoreBorder, outToCenter özellikleri eklenebilir. Boş bırakıldığında animasyon çalışmaz. Diğer iki özellikte seçim ve seçimi kaldırma işlemlerinde animasyon çalışır.
+      </td>
+    </tr>
+        <tr>
       <td>
       <strong>buttonClass</strong>
       </td>
@@ -92,32 +132,10 @@ $(".for-example").baseChecked({
       bc-button
       </td>
       <td>
-      <p>Customizabled element class for check button</p>
+      When the plugin is init, the class of the button element inserted into the wrapperEl
       </td>
     </tr>
-    <tr>
-      <td>
-      <strong>labelClass</strong>
-      </td>
-      <td>
-      bc-label
-      </td>
-      <td>
-      <p>Customizabled element class for text side (This element can learn to read the data from the labelData feature).</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <strong>disabledClass</strong>
-      </td>
-      <td>
-      bc-disabled
-      </td>
-      <td>
-      <p>If you are using "disabled" attributes your form elements, this class added selected element parent item. After initialization disabled item not working click and other actions.</p>
-      </td>
-    </tr>
-    <tr>
+        <tr>
       <td>
       <strong>buttonText</strong>
       </td>
@@ -132,8 +150,6 @@ $(".for-example").baseChecked({
 
 
 ## Callbacks
-
-All callbacks(except for onInit()) selected "itemName" parameters. itemName is form element name attributes.
 	 
 <table>
 	<tr>
@@ -143,28 +159,6 @@ All callbacks(except for onInit()) selected "itemName" parameters. itemName is f
     </tr>
     <tr>
     <td>
-      <strong>onInit</strong>
-      </td>
-      <td>
-      empty
-      </td>
-      <td>
-      <p>First time plugin initialization callbacks.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <strong>onChange</strong>
-      </td>
-      <td>
-      empty
-      </td>
-      <td>
-      <p>After radio button change callbacks</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
       <strong>onCheck</strong>
       </td>
       <td>
@@ -182,13 +176,18 @@ All callbacks(except for onInit()) selected "itemName" parameters. itemName is f
       empty
       </td>
       <td>
-      <p>After checkbox unchecked actions</p>
+      <p>After checkbox removed checked actions</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <strong>onSelected</strong>
+      </td>
+      <td>
+      empty
+      </td>
+      <td>
+      <p>After radio button selected actions</p>
       </td>
     </tr>
 </table>
-
-
-
-
-
-
