@@ -121,7 +121,7 @@ baseChecked.init({
       empty
       </td>
       <td>
-      Boş bırakılabilir veya noMoreBorder, outToCenter özellikleri eklenebilir. Boş bırakıldığında animasyon çalışmaz. Diğer iki özellikte seçim ve seçimi kaldırma işlemlerinde animasyon çalışır.
+      Can be left blank, outToCenter, noMoreBorder features are available. The animation will not work when left blank. On the other two features, selection and removed selection process works.
       </td>
     </tr>
         <tr>
