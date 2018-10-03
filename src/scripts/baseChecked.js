@@ -18,8 +18,6 @@ let baseChecked = {
 
     let itemFormEl, itemButtonEl, itemName, itemType, itemAnimation;
     
-    baseChecked.clickAction(resultEl);
-    
     Array.prototype.forEach.call(items, (item) => {
       /* element selectors */
       itemFormEl = item.querySelector(resultEl.mainEl);
@@ -45,6 +43,8 @@ let baseChecked = {
       baseChecked.elementStyles(itemFormEl);
 
     });
+
+    baseChecked.clickAction(resultEl);
 
   },
   elementStyles(itemFormEl) { /* form element styles */
@@ -118,5 +118,4 @@ const closestSelector = () => { /* ie9+ closest polyfill */
 
 window.addEventListener('load', () => {
   closestSelector();
-  baseChecked.init();
 });

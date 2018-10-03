@@ -24,8 +24,6 @@ var baseChecked = {
         itemType = void 0,
         itemAnimation = void 0;
 
-    baseChecked.clickAction(resultEl);
-
     Array.prototype.forEach.call(items, function (item) {
       /* element selectors */
       itemFormEl = item.querySelector(resultEl.mainEl);
@@ -50,6 +48,8 @@ var baseChecked = {
 
       baseChecked.elementStyles(itemFormEl);
     });
+
+    baseChecked.clickAction(resultEl);
   },
   elementStyles: function elementStyles(itemFormEl) {
     /* form element styles */
@@ -129,5 +129,4 @@ var closestSelector = function closestSelector() {
 
 window.addEventListener('load', function () {
   closestSelector();
-  baseChecked.init();
 });
